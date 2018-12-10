@@ -14,31 +14,8 @@
     </div>
     <div>
         <br>
-        <button type="button" onclick="check()" class="btn btn-default" id="resp">{% trans %}question.respond{% endtrans %}</button>
+        <button type="button" onclick="check(`{{ path("answerCheck", {'id':quiz.id}) }}`)" class="btn btn-default" id="resp">{% trans %}question.respond{% endtrans %}</button>
         <a class="btn btn-success" style="display: none;" id="next" href={{ path("quizGame", {'id':quiz.id}) }} >{% trans %}question.next{% endtrans %}</a>
     </div>
-    <script>
-         function check() {
-            $.ajax({
-                url: "{{ path("answerCheck", {'id':quiz.id}) }}",
-                type: "POST",
-                dataType: "json",
-                async: true,
-                data: {
-                    "optionId": $('input:radio:checked').attr('id')
-                },
-                success: function(data){
-                    if(data['result'] == true){
-                        $("#correct").show();
-                    } else {
-                        $("#incorrect").show();
-                    }
-                    $("#resp").hide();
-                    $("#next").show();
-                }
-            });
-            return false;
-        }
-
-    </script>
+    <script type="text/javascript" language="javascript" src="/js/sendAnswer.js"></script>
 {% endblock %}
