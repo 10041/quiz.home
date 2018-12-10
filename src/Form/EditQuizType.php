@@ -39,7 +39,7 @@ class EditQuizType extends AbstractType
                     'No' => false,
                 ),
                 'attr' => [
-
+                    'class' => 'form-control'
                 ]
             ))
             ->add('question', EntityType::class, array(
@@ -48,11 +48,16 @@ class EditQuizType extends AbstractType
                 'mapped' => false,
                 'multiple' => false,
                 'attr' => [
-                    'class' => 'selectpicker',
+                    'class' => 'form-control',
                     'data-live-search' => 'true',
                 ]
             ))
-            ->add('save', SubmitType::class, array('label' => 'Save'))
+            ->add('save', SubmitType::class, array(
+                'label' => 'Save',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ))
 //            ->add('createData')
 //            ->add('isActive')
 //            ->add('question')

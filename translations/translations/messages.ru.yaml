@@ -79,13 +79,13 @@ quiz:
   yourPlace : Ваше место в рейтинге
 
 user:
-  username : Никнэйм
+  username : Ник
   name : Имя
   surname : Фамилия
   lastname : Отчество
   role : Роль
   email : Электронная почта
-  isActive :
+  isActive : Активен
   delete : Удалить
   edit : Редактировать
 
